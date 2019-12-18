@@ -1,0 +1,87 @@
+/*--------------------------------------------------------------------*\
+    FONT FACE
+\*--------------------------------------------------------------------*/
+// Font
+//
+// At Vestiaire Collective we use two specific fonts : HK Grotesk and Hco Quarto.
+//
+// Styleguide 1
+
+// sass-lint:disable indentation
+
+@font-face {
+  font-family: 'HK Grotesk';
+  src: url('/assets/font/hkgrotesk-bold.woff2') format('woff2'), url('/assets/font/hkgrotesk-bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: 'HK Grotesk';
+  src: url('/assets/font/hkgrotesk-light.woff2') format('woff2'), url('/assets/font/hkgrotesk-light.woff') format('woff');
+  font-weight: 100;
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: 'HK Grotesk';
+  src: url('/assets/font/hkgrotesk-medium.woff2') format('woff2'), url('/assets/font/hkgrotesk-medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: 'HK Grotesk';
+  src: url('/assets/font/hkgrotesk-regular.woff2') format('woff2'), url('/assets/font/hkgrotesk-regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: fallback;
+}
+
+// Font : HK Grotesk
+//
+// To use HK Grostesk you must use the variable <code>$hkGrotesk</code>.<br /><br />
+// <p style="font-family:'HK Grotesk';font-weight:normal;">By default, it display Hk Grostesk Regular ; <code>font-weight: normal</code>.<br />This is a paragraph with HK Grotesk Regular</p><br /><br />
+// <p style="font-family:'HK Grotesk';font-weight:500;">To display the Medium, you have to set the <code>font-weight: 500</code>.<br />
+// This is a paragraph with HK Grotesk Medium</p><br /><br />
+// <p style="font-family:'HK Grotesk';font-weight:100;">To display the Light, you have to set the <code>font-weight: 100</code>.<br />This is a paragraph with HK Grotesk Light</p><br /><br />
+//
+// Styleguide 1.1
+
+/* Quarto under licence - Copyright (C) 2011-2017 Hoefler & Co */
+@font-face {
+  font-family: 'HCo Quarto';
+  src: url('/assets/font/Quarto/AAC4C0639ECB1F553.woff2') format('woff2'), url('/assets/font/Quarto/AAC4C0639ECB1F553.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: 'HCo Quarto';
+  src: url('/assets/font/Quarto/2C9C241341616B888.woff2') format('woff2'), url('/assets/font/Quarto/2C9C241341616B888.woff') format('woff');
+  font-weight: 300;
+  font-style: italic;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: 'HCo Quarto';
+  src: url('/assets/font/Quarto/3F11D3D67B7E84823.woff2') format('woff2'), url('/assets/font/Quarto/3F11D3D67B7E84823.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: fallback;
+}
+
+// Font : HCo Quarto
+//
+// HCo Quarto is a font under private license (Copyright (C) 2011-2017 Hoefler & Co). <b style="color:#e51a32;font-weight:700;">Do not share the files with the outside.</b><br />
+// To use HCo Quarto, you muse use the variable <code>$quarto</code><br /><br />
+// <p style="font-family:'HCo Quarto';font-weight:normal;">By default, it display HCo Quarto Light ; <code>font-weight: normal</code>.<br />This is a paragraph with HCo Quarto Light</p><br /><br />
+// <p style="font-family:'HCo Quarto';font-weight:normal;font-style:italic">To display HCo Quarto Light italic, set <code>font-style: italic</code>.<br />This is HCo with HCo Quarto Light italic</p><br /><br />
+// <p style="font-family:'HCo Quarto';font-weight:700;">To display HCo Quarto Bold, set <code>font-weight: 700</code>.<br />This is a paragraph with HCo Quarto Bold</p>
+//
+// Styleguide 1.2

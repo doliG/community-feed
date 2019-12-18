@@ -1,0 +1,14 @@
+@import 'DUPLICATE_NGX_assets/css/global/_variables';
+@import 'DUPLICATE_NGX_assets/css/global/_mixins';
+
+@mixin vc-form-text-input {
+  display: block;
+  border: none;
+  font-size: 18px;
+  line-height: 21px;
+  padding-bottom: 2px;
+  border-bottom: 1px solid $grey-medium;
+  border-radius: 0;
+  width: 100%;
+  outline: none;
+}

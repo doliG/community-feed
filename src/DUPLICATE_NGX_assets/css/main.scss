@@ -1,0 +1,77 @@
+// Required
+@import 'global/_mixins';
+@import 'global/_variables';
+@import 'global/_reset';
+@import 'global/_helpers';
+@import 'global/_fonts';
+@import 'global/_typos';
+@import 'global/_buttons';
+@import 'global/_form';
+@import 'global/_loader';
+@import 'global/_icons';
+@import 'global/_tooltip';
+@import 'global/_search';
+@import 'global/_fixes';
+@import 'global/_tagsnflags';
+
+// External libraries
+@import '../../../node_modules/bootstrap/scss/_functions';
+@import '../../../node_modules/bootstrap/scss/_variables';
+@import '../../../node_modules/bootstrap/scss/_mixins';
+@import '../../../node_modules/bootstrap/scss/_grid';
+@import 'global/_grid'; // IMPORTANT : modal must be call after bootstrap grid
+@import '../../../node_modules/bootstrap/scss/utilities/_display';
+// Removed cause we are no more in angualr project
+// @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+// IMPORTANT : modal must be call AFTER material
+@import 'global/_modal';
+@import 'global/catalog_filters/_index';
+// Libraries overload
+@import 'global/libraries/_index';
+
+body {
+  @extend .vc-text-m;
+  font-family: $font-body;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: auto;
+  text-rendering: geometricPrecision;
+  width: 100vw;
+  max-width: 100%;
+  overflow-x: hidden;
+  color: $black-soft;
+
+  &.safariNoScroll {
+    overflow: hidden;
+
+    app-root {
+      // sass-lint:disable no-qualifying-elements
+      & > div {
+        height: 100vh;
+        overflow: hidden;
+      }
+    }
+  }
+}
+
+a {
+  cursor: pointer;
+}
+
+strong,
+b {
+  font-weight: 600;
+}
+
+.loadingOverlay.hasLoader {
+  position: fixed;
+  height: 100%;
+  z-index: 99999;
+  width: 100%;
+  top: 0;
+}
+
+.clearfix {
+  overflow: auto;
+  zoom: 1;
+}

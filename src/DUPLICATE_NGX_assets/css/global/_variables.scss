@@ -1,0 +1,14 @@
+@import 'DUPLICATE_NGX_assets/css/global/variables/_colors';
+@import 'DUPLICATE_NGX_assets/css/global/variables/_fonts';
+@import 'DUPLICATE_NGX_assets/css/global/variables/_depth';
+@import 'DUPLICATE_NGX_assets/css/global/variables/_breakpoints';
+
+// DESIGN SYSTEM -------------------------------------------------------------------
+// $mainColor-dark: $terracota-dark; // NOTA BENE : initially created for large zones
+// $mainColor-light: $terracota-light; // NOTA BENE : initially created for text and lines
+$mainColor-dark: $colorBrand-dark;
+$mainColor-light: $colorBrand-lighten;
+$headings-font: $quarto;
+$headings-weight: 300;
+$font-body: $hkGrotesk;
+

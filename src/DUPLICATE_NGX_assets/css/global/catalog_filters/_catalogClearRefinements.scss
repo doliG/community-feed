@@ -1,0 +1,36 @@
+@import 'DUPLICATE_NGX_assets/css/global/_variables';
+@import 'DUPLICATE_NGX_assets/css/global/_mixins';
+
+.catalog__columnFilter__actionBtn--clear {
+  padding: 0;
+  background: #fff;
+  border-color: #eaeaea transparent transparent;
+  flex-grow: 1;
+  flex-basis: 50%;
+
+  .ais-ClearRefinements {
+    height: 100%;
+    width: 100%;
+  }
+
+  .ais-ClearRefinements-button {
+    font-size: 13px;
+    text-transform: uppercase;
+    color: $grey-medium;
+    height: 100%;
+    width: 100%;
+    border: none;
+    padding-top: 22px;
+    padding-bottom: 22px;
+  }
+
+  &:hover {
+    .ais-ClearRefinements-button {
+      color: #fff;
+    }
+  }
+}
+
+.catalog__columnFilter__actionBtn {
+  width: 50%;
+}

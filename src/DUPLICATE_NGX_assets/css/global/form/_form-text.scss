@@ -1,0 +1,153 @@
+@import 'DUPLICATE_NGX_assets/css/global/_variables';
+@import 'DUPLICATE_NGX_assets/css/global/_mixins';
+
+/* FIRST INPUT TEXT STYLE -------------------------- */
+.vc-form-text {
+  width: 100%;
+  position: relative;
+  padding-top: 18px;
+  overflow: hidden;
+
+  &__label {
+    display: block;
+    position: absolute;
+    top: 7px;
+    font-size: 18px;
+    line-height: 26px;
+    color: $grey-medium;
+    transition: all 0.3s ease-in-out;
+  }
+
+  &__input {
+    display: block;
+    border: none;
+    border-bottom: 1px solid $grey-medium;
+    border-radius: 0;
+    width: 100%;
+    outline: none;
+    font-size: 18px;
+    line-height: 26px;
+    padding-bottom: 4px;
+
+    &:focus {
+      border-color: $mainColor-light;
+
+      + .vc-form-text__label {
+        color: $mainColor-light;
+      }
+
+      ~ .vc-form-text__unity {
+        border-color: $mainColor-light;
+      }
+    }
+
+    &:focus,
+    &.notEmpty,
+    &.ng-touched {
+      + .vc-form-text__label {
+        top: 0;
+        font-size: 13px;
+        line-height: 16px;
+        font-weight: 500;
+      }
+    }
+
+    &.error,
+    &.ng-invalid.ng-touched {
+      border-color: $red;
+
+      + .vc-form-text__label {
+        color: $red;
+      }
+
+      ~ .vc-form-text__unity {
+        border-color: $red;
+      }
+    }
+  }
+
+  &__action {
+    position: absolute;
+    bottom: 9px;
+    right: 0;
+    color: $grey-dark;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 15px;
+  }
+
+  &--withUnit {
+    display: flex;
+    flex-flow: row wrap;
+
+    .vc-form-text {
+      &__input {
+        order: 1;
+        width: auto;
+        flex: 1;
+      }
+
+      &__label {
+        order: 3;
+      }
+
+      &__unity {
+        border-bottom: 1px solid $grey-medium;
+        order: 2;
+      }
+    }
+  }
+
+  &--noLabelAnimation {
+    .vc-form-text__label {
+      top: 0;
+      font-size: 13px;
+      line-height: 16px;
+      font-weight: 500;
+    }
+  }
+}
+
+@include respond-to($md-up) {
+  .vc-form-text {
+    &__input {
+      line-height: 21px;
+      padding-bottom: 5px;
+    }
+
+    &__label {
+      top: 18px;
+      line-height: 21px;
+    }
+
+    &__action {
+      bottom: 5px;
+    }
+  }
+}
+
+/* SECOND INPUT TEXT STYLE -------------------------- */
+.vc-form-text2__input {
+  display: block;
+  border: 1px solid $grey-light;
+  width: 100%;
+  height: 45px;
+  line-height: 45px;
+  outline: none;
+  font-size: 15px;
+  padding: 0 14px;
+  font-family: $hkGrotesk;
+
+  &::placeholder {
+    color: $grey-medium;
+    font-weight: normal;
+  }
+}
+
+@include respond-to($md-up) {
+  .vc-form-text2__input {
+    font-size: 14px;
+    height: 36px;
+    line-height: 36px;
+  }
+}

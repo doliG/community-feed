@@ -1,0 +1,6 @@
+// MIXIN FOR MEDIA QUERIES
+@mixin respond-to($breakpoint) {
+  @media #{$breakpoint} {
+    @content
+  }
+}

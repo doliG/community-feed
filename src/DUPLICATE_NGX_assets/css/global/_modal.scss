@@ -1,0 +1,129 @@
+@import 'global/_variables';
+@import 'global/_mixins';
+
+.cdk-overlay-pane {
+  @include hide-scrollbar;
+  max-width: 100vw;
+  width: 100%;
+}
+
+.mat-dialog-container {
+  -webkit-overflow-scrolling: touch;
+}
+
+.vc-modal__innerContainer {
+  padding: 20px;
+  height: 100%;
+  color: $black-soft;
+}
+
+.vc-modal__innerContainer--full {
+  padding: 0;
+}
+
+@include respond-to($sm-down) {
+  .cdk-overlay-pane {
+    // sass-lint:disable no-important
+    max-width: 100vw !important;
+    height: 100%;
+    // sass-lint:enable no-important
+  }
+}
+
+@include respond-to($md-up) {
+  .vc-modal__innerContainer {
+    height: auto;
+  }
+
+  .vc-modal__innerContainer:not(.vc-modal__innerContainer--full) {
+    padding: 60px 40px 40px 40px;
+  }
+}
+
+/*------------------------------------------------------
+  CLOSE BUTTON
+--------------------------------------------------------*/
+
+$vcModalCloseBtnSize: 16px;
+
+.vc-modal__closeBtn {
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: $vcModalCloseBtnSize;
+  height: $vcModalCloseBtnSize;
+  border: none;
+  background-color: transparent;
+  color: inherit;
+  font: inherit;
+  line-height: normal;
+  -webkit-appearance: none;
+  outline: 1px solid transparent;
+  cursor: pointer;
+  z-index: $modal-depth;
+  padding: calc(44px - #{$vcModalCloseBtnSize});
+}
+
+.vc-modal__closeBtn__crossLeft,
+.vc-modal__closeBtn__crossRight {
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 1px;
+  height: $vcModalCloseBtnSize;
+  border: none;
+  background-color: $grey-medium;
+  color: inherit;
+  font: inherit;
+  line-height: normal;
+  -webkit-appearance: none;
+}
+
+.vc-modal__closeBtn__crossLeft {
+  transform: rotate(45deg) translate3d(-50%, -50%, 0);
+  left: calc(50% - #{$vcModalCloseBtnSize / 4});
+}
+
+.vc-modal__closeBtn__crossRight {
+  transform: rotate(-45deg) translate3d(-50%, -50%, 0);
+  left: calc(50% + #{$vcModalCloseBtnSize / 2});
+}
+
+// sass-lint:disable no-qualifying-elements
+mat-dialog-container.mat-dialog-container {
+  @include hide-scrollbar;
+
+  position: relative;
+  padding: 0;
+}
+// sass-lint:enable no-qualifying-elements
+
+@include respond-to($md-up) {
+  .cdk-overlay-pane {
+    max-width: 80vw;
+    height: auto;
+    max-height: 100%;
+    overflow-y: auto;
+  }
+}
+/*  MOBILE ONLY */
+@media (max-width: #{upper-bound($sm-range)}) {
+  // sass-lint:disable no-qualifying-elements
+  mat-dialog-container.mat-dialog-container {
+    height: 100%;
+  }
+  // sass-lint:enable no-qualifying-elements
+}
+
+/*------------------------------------------------------
+  MODAL CONTENT
+--------------------------------------------------------*/
+.vc-modal__title {
+  @include heading3;
+}
+
+.vc-modal__content {
+  margin-top: 40px;
+}

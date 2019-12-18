@@ -1,0 +1,183 @@
+@import 'DUPLICATE_NGX_assets/css/global/_variables';
+@import 'DUPLICATE_NGX_assets/css/global/_mixins';
+
+// Buttons
+//
+// All buttons styles.
+// Needed skills : BEM and mobile first.
+//
+// Styleguide 4
+
+// Primary (default) Button
+//
+// For all buttons, use ".vc-btn" as basic css class. <br/>
+// Please hover it to see the ":hover" style.
+//
+// Markup:
+// <button class="vc-btn">Button</button>
+//
+// Styleguide 4.1
+
+// Disabled Button
+//
+// When button is disabled.
+//
+// Markup:
+// <button class="vc-btn" disabled>Button</button>
+//
+// Styleguide 4.2
+
+.vc-btn {
+  @include vc-btn;
+}
+
+// Primary (Default) Button
+//
+// Primary is actually the default button style. It is used for the main actions. <br/>
+// Consider ".vc-btn--primary" class as not necessary while ".vc-btn" already apply primary style. <br/>
+// However it could be usefull in case of breakpoint overloads (see point 4.9 for examples)
+//
+// Markup:
+// <button class="vc-btn vc-btn--primary">Primary Button</button>
+//
+// Styleguide 4.3
+
+.vc-btn--default {
+  @include vc-btn--default;
+}
+
+
+
+// Primary Brand Button
+//
+// For minor actions, .vc-btn--primary--brand
+//
+// Markup:
+// <button class="vc-btn vc-btn--primary--brand">Brand Button</button>
+//
+// Styleguide 4.4
+
+.vc-btn--brand {
+  @include vc-btn--brand;
+}
+
+
+// Secondary Button
+//
+// For all secondary actions when two buttons are side by side. <br/>
+// .vc-btn--secondary  - Indicates button is the secondary action.
+//
+// Markup:
+// <button class="vc-btn vc-btn--secondary">Button</button>
+//
+// Styleguide 4.5
+
+.vc-btn--secondary {
+  @include vc-btn--secondary;
+}
+
+
+
+
+// Buttons Sizes
+//
+// The different sizes for buttons.
+//
+// Markup:
+// <button class="vc-btn {{modifier_class}}">Button</button>
+//
+// .vc-btn--small  - Small size.
+// .vc-btn--medium  - Medium size.
+// .vc-btn--large  - Large size.
+// .vc-btn--full  - Button's weight is 100% of his parent.
+// .vc-btn--notfull - Prevent button's weight to be 100%.. Create to overload 'vc-btn--full' (see point 4.9)
+//
+// Styleguide 4.6
+
+.vc-btn--medium {
+  @include vc-btn--medium;
+}
+
+.vc-btn--small {
+  @include vc-btn--small;
+}
+
+.vc-btn--large {
+  @include vc-btn--large;
+}
+
+.vc-btn--full {
+  @include vc-btn--full;
+
+  @include respond-to($sm-down) { // sm-down = max 767px
+    &--sm-down {
+      @include vc-btn--full;
+    }
+  }
+
+  @include respond-to($sm-up) { // sm-up = min 375px
+    &--sm-up {
+      @include vc-btn--full;
+    }
+  }
+
+  @include respond-to($md-up) { // md-up = min 768px
+    &--md-up {
+      @include vc-btn--full;
+    }
+  }
+
+  @include respond-to($lg-up) { // lg = min 1024px
+    &--lg-up {
+      @include vc-btn--full;
+    }
+  }
+}
+
+
+
+.vc-btn--notfull {
+  @include vc-btn--notfull;
+
+  @include respond-to($sm-down) { // sm-down = max 767px
+    &--sm-down {
+      @include vc-btn--notfull;
+    }
+  }
+
+  @include respond-to($sm-up) { // sm-up = min 375px
+    &--sm-up {
+      @include vc-btn--notfull;
+    }
+  }
+
+  @include respond-to($md-up) { // md-up = min 768px
+    &--md-up {
+      @include vc-btn--notfull;
+    }
+  }
+
+  @include respond-to($lg-up) { // lg = min 1024px
+    &--lg-up {
+      @include vc-btn--notfull;
+    }
+  }
+}
+
+
+// Responsive
+//
+// First rule to know : we code in <b style="font-weight:900;color:#e51a32;">mobile first</b>, <br/>
+// All the classes we studied before are applied on all screens. They are equal to 'xs' classes (applied from 0px to infinite width) <br/>
+// for bigger devices use modifier-responsive classes like .vc-btn-sm--xx, .vc-btn-md--xx, .vc-btn-lg--xx...<br />
+// <br/>
+// Please see the example below and resize your window to test it: <br/>
+// In xs and sm screens the buttons are large, in md screens the buttons are medium and in lg screens they are small. and the style change from secondary-brand to secondary for the second button
+//
+//
+// Markup:
+// <button class="vc-btn vc-btn--large vc-btn--full vc-btn-md--notfull vc-btn-md--medium vc-btn-lg--small" style="margin:0 10px 20px 0;">Button Action 1</button>
+// <button class="vc-btn vc-btn--large vc-btn--full vc-btn-md--notfull vc-btn-md--medium vc-btn-lg--small vc-btn-lg--secondary" style="margin-bottom:20px;">Button Action 2</button>
+//
+//
+// Styleguide 4.7

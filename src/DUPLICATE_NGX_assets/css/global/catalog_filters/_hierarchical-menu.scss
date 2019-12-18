@@ -1,0 +1,100 @@
+@import 'global/_variables';
+@import 'global/_mixins';
+
+.ais-HierarchicalMenu-item {
+  .ais-HierarchicalMenu-link {
+    display: block;
+    position: relative;
+    padding-left: 24px;
+    font-size: 16px;
+    line-height: 19px;
+    cursor: pointer;
+    margin-bottom: 10px;
+
+    &::before {
+      display: block;
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 14px;
+      height: 14px;
+      border: 1px solid $grey-light;
+      background: #fff;
+    }
+
+    &::after {
+      display: none;
+      content: '';
+      position: absolute;
+      top: 4px;
+      left: 3px;
+      width: 10px;
+      height: 8.33px;
+      background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 12 9" ><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-4.000000, -6.000000)"><polyline stroke="#fff" points="14.6457919 6.59443244 7.70277058 14.3333333 5 11.3317105"></polyline></g></svg>') no-repeat top left;
+    }
+  }
+
+  .ais-HierarchicalMenu-count {
+    font-size: 12px;
+    line-height: 15px;
+    color: $grey-dark;
+
+    &::before {
+      content: '(';
+    }
+
+    &::after {
+      content: ')';
+    }
+  }
+}
+
+.ais-HierarchicalMenu-item--selected > .ais-HierarchicalMenu-link {
+  &::before {
+    border-color: $mainColor-light;
+    background: $mainColor-light;
+  }
+
+  &::after {
+    display: block;
+  }
+}
+
+.ais-HierarchicalMenu-list--lvl0
+> ng-ais-hierarchical-menu-item
+> .ais-HierarchicalMenu-item
+> .ais-HierarchicalMenu-link {
+  padding-left: 0;
+
+  &::after {
+    display: inline-block;
+    position: relative;
+    top: auto;
+    left: 11px;
+    vertical-align: middle;
+    width: 7px;
+    height: 7px;
+    line-height: 15px;
+    border-left: none;
+    border-top: none;
+    background-color: transparent;
+    border-right: solid 1px $grey-dark;
+    border-bottom: solid 1px $grey-dark;
+    transform-origin: center;
+    transform: translateY(-50%) rotate(45deg);
+  }
+
+  &::before {
+    display: none;
+  }
+}
+
+.ais-HierarchicalMenu-list--lvl0
+> ng-ais-hierarchical-menu-item
+> .ais-HierarchicalMenu-item--selected
+> .ais-HierarchicalMenu-link {
+  &::after {
+    transform: rotate(-135deg);
+  }
+}

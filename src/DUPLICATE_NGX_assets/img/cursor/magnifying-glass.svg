@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="42px" height="42px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <!-- Generator: Sketch 51.1 (57501) - http://www.bohemiancoding.com/sketch -->
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(-509.000000, -562.000000)">
+            <g transform="translate(509.000000, 562.000000)">
+                <circle fill="#FFFFFF" opacity="0.697712054" cx="21" cy="21" r="21"></circle>
+                <g transform="translate(6.000000, 5.000000)">
+                    <path d="M16.9912401,23.6984254 L16.9912401,27.1540148 L16.9912401,23.6984254 Z M16.9912401,27.1540148 L16.9912401,30.3686581 L16.9912401,27.1540148 Z M16.9912401,23.6984254 L16.9912401,23.4614719 L17.4686518,23.439882 C22.5285953,23.2110572 26.5317806,19.0338122 26.5317806,13.9497392 C26.5317806,8.70303406 22.2784858,4.44973919 17.0317806,4.44973919 C11.7850755,4.44973919 7.53178064,8.70303406 7.53178064,13.9497392 C7.53178064,19.0051404 11.4914378,23.1683518 16.5178353,23.4360867 L16.9912401,23.4613029 L16.9912401,23.6984254 Z" stroke="#2B2B2B" transform="translate(17.031781, 17.409199) rotate(-45.000000) translate(-17.031781, -17.409199) "></path>
+                    <rect fill="#2B2B2B" x="14" y="10" width="1" height="11"></rect>
+                    <rect fill="#2B2B2B" x="9" y="15" width="11" height="1"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

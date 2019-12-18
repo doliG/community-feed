@@ -1,0 +1,26 @@
+// sass-lint:disable no-important
+// sass-lint:disable no-universal-selectors
+
+%scrollbar-webkit {
+  width: 0 !important;
+}
+
+%ms-scrollbar-webkit {
+  -ms-overflow-style: none;
+}
+
+@mixin hide-scrollbar {
+  @extend %ms-scrollbar-webkit;
+
+  &::-webkit-scrollbar {
+    @extend %scrollbar-webkit;
+  }
+
+  * {
+    @extend %ms-scrollbar-webkit;
+
+    &::-webkit-scrollbar {
+      @extend %scrollbar-webkit;
+    }
+  }
+}

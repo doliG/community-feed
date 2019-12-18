@@ -1,0 +1,178 @@
+// sass-lint:disable mixins-before-declarations
+
+/*
+* TITLES
+*/
+@mixin heading1 {
+  font-family: $headings-font;
+  font-weight: $headings-weight;
+  font-size: 54px;
+  line-height: 54px;
+
+  @include respond-to($lg-up) {
+    font-size: 81px;
+    line-height: 81px;
+  }
+}
+
+@mixin heading2 {
+  font-family: $headings-font;
+  font-weight: $headings-weight;
+  font-size: 36px;
+  line-height: 36px;
+
+  @include respond-to($lg-up) {
+    font-size: 54px;
+    line-height: 54px;
+  }
+}
+
+@mixin heading3 {
+  font-family: $headings-font;
+  font-weight: $headings-weight;
+  font-size: 24px;
+  line-height: 24px;
+
+  @include respond-to($lg-up) {
+    font-size: 36px;
+    line-height: 36px;
+  }
+}
+
+@mixin heading4 {
+  font-family: $headings-font;
+  font-weight: $headings-weight;
+  font-size: 18px;
+  line-height: 18px;
+
+  @include respond-to($lg-up) {
+    font-size: 24px;
+    line-height: 24px;
+  }
+}
+
+/*
+* TEXT CONTENT
+*/
+@mixin large-text {
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+
+  @include respond-to($lg-up) {
+    font-size: 18px;
+    line-height: 27px;
+  }
+}
+
+@mixin main-text {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 21px;
+
+  @include respond-to($lg-up) {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+@mixin important-text {
+  @include main-text;
+  font-weight: 600;
+}
+
+@mixin small-text {
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 20px;
+
+  @include respond-to($lg-up) {
+    font-size: 14px;
+    line-height: 21px;
+  }
+}
+
+@mixin x-small-text {
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 12px;
+
+  @include respond-to($lg-up) {
+    font-size: 12px;
+    line-height: 14px;
+  }
+}
+
+/*
+* LINK NEW DS
+*/
+@mixin link {
+  color: $colorTextBase;
+  font-weight: 600;
+  font-size: 12px;
+  text-decoration: underline;
+  transition: color 0.3s ease-in-out;
+
+  &:hover {
+    color: $colorBrand;
+  }
+}
+
+@mixin link-dangerous {
+  @include link;
+  color: $colorError;
+  font-weight: 600;
+}
+
+
+/*  OLD DESIGN SYSTEM  */
+@mixin heading5 {
+  font-family: $headings-font;
+  font-weight: $headings-weight;
+  font-size: 22px;
+  line-height: 30px;
+
+  @include respond-to($lg-up) {
+    font-size: 24px;
+    line-height: 30px;
+  }
+}
+
+@mixin heading6 {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 26px;
+
+  @include respond-to($lg-up) {
+    font-size: 18px;
+    line-height: 28px;
+  }
+}
+
+@mixin body1 {
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 26px;
+
+  @include respond-to($lg-up) {
+    font-size: 18px;
+    line-height: 28px;
+  }
+}
+
+@mixin body2 {
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+@mixin body3 {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+
+  @include respond-to($lg-up) {
+    font-size: 15px;
+    line-height: 20px;
+  }
+}

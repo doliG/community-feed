@@ -1,0 +1,170 @@
+@mixin vc-btn {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+  font-family: $hkGrotesk;
+  font-weight: 600;
+  line-height: 1;
+  border-radius: 4px;
+
+  &:disabled {
+    cursor: auto;
+  }
+
+  &.disabled,
+  &.disabled a {
+    cursor: default;
+  }
+
+  &:disabled,
+  &disabled,
+  &.disabled {
+    background: $grey-darken;
+    border-color: $grey-darken;
+    color: $grey-middle;
+  }
+}
+
+/*
+* BUTTON TYPE
+*/
+@mixin vc-btn--default {
+  background: $black;
+  border: 1px solid $black;
+  color: #fff;
+
+  &:disabled,
+  &disabled,
+  &.disabled {
+    background: $grey-darken;
+    border-color: $grey-darken;
+    color: $grey-middle;
+
+    &:hover {
+      background: $grey-darken;
+      border-color: $grey-darken;
+      color: $grey-middle;
+    }
+  }
+
+  // touch mobile
+  &:hover {
+    background: $black-lighten;
+    border-color: $black-lighten;
+    color: #fff;
+  }
+
+  // desktop DS = hover
+  @include respond-to($lg-up) {
+    &:hover {
+      background: $black-darken;
+      border-color: $black-darken;
+      color: #fff;
+    }
+  }
+}
+
+@mixin vc-btn--brand {
+  background: $colorBrand;
+  border: 1px solid $colorBrand;
+  color: $black;
+
+  &:disabled,
+  &disabled,
+  &.disabled {
+    background: $grey-darken;
+    border-color: $grey-darken;
+    color: $grey-middle;
+
+    &:hover {
+      background: $grey-darken;
+      border-color: $grey-darken;
+      color: $grey-middle;
+    }
+  }
+
+  // touch mobile
+  &:hover {
+    background: $colorBrand-lighten;
+    border-color: $colorBrand-lighten;
+    color: #fff;
+  }
+
+  // desktop DS = hover
+  @include respond-to($lg-up) {
+    &:hover {
+      background: $colorBrand-dark;
+      border-color: $colorBrand-dark;
+      color: #fff;
+    }
+  }
+}
+
+@mixin vc-btn--secondary {
+  background: #fff;
+  border: 1px solid $grey-line;
+  color: $black;
+
+  &:disabled,
+  &disabled,
+  &.disabled {
+    background: #fff;
+    border-color: $grey-darken;
+    color: $grey-middle;
+
+    &:hover {
+      background: #fff;
+      border-color: $grey-darken;
+      color: $grey-middle;
+    }
+  }
+
+  // touch mobile
+  &:hover {
+    background: #fff;
+    border-color: $black-lighten;
+    color: $black-lighten;
+  }
+
+  // desktop DS = hover
+  @include respond-to($lg-up) {
+    &:hover {
+      border-color: $black-darken;
+      color: $black-darken;
+    }
+  }
+}
+
+
+/*
+* BUTTON SIZE
+*/
+
+@mixin vc-btn--large {
+  font-size: 16px;
+  height: 56px;
+  padding: 0 32px;
+}
+
+@mixin vc-btn--medium {
+  font-size: 14px;
+  height: 48px;
+  padding: 0 24px;
+}
+
+@mixin vc-btn--small {
+  font-size: 12px;
+  height: 32px;
+  padding: 0 16px;
+}
+
+@mixin vc-btn--full {
+  width: 100%;
+}
+
+@mixin vc-btn--notfull {
+  width: auto;
+}

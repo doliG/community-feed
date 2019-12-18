@@ -1,0 +1,232 @@
+// sass-lint:disable mixins-before-declarations
+// MIXIN FOR TAG
+
+@mixin tag {
+  display: inline-flex;
+  align-items: center;
+  text-align: center;
+  padding: 0 16px;
+  height: 32px;
+  border-radius: 16px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1;
+  border: 1px solid transparent;
+  cursor: cursor;
+  transition: all 0.3s ease;
+
+  // on desktop
+  @include respond-to($lg-up) {
+    height: 48px;
+    padding: 0 24px;
+    border-radius: 24px;
+    font-size: 14px;
+  }
+}
+
+/* 
+* This mixin aims at keeping your hexadecimal color 
+* and add an opacity on it without touching your text opacity.
+*/
+@mixin add-opacity-on-hexadecimal ($alpha, $hexa) {
+  background: rgba(red($hexa), green($hexa), blue($hexa), $alpha);
+}
+
+/*
+* * * Tag type 
+*/
+@mixin tag--colored($textColor, $bgColor: 'unset', $borderColor: 'unset') {
+  background: $bgColor;
+  color: $textColor;
+  border-color: $borderColor;
+}
+
+
+/*
+* * * Tag behavior
+*/
+// linkable = link (hover and cursor, no cross)
+@mixin linkable($borderColor, $hoverBgColor: 'unset') {
+  cursor: pointer;
+
+  &:not(.ais-CurrentRefinements-button--static) {
+    &:hover {
+      background: $hoverBgColor;
+      border-color: $borderColor;
+    }
+  }
+}
+
+// crossable = filter (hover, cursor and cross)
+@mixin crossable {
+  cursor: pointer;
+  position: relative;
+  padding-right: 30px;
+
+  &::before,
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 1px;
+    height: 12px;
+    right: 12px;
+    top: 8px;
+    background: $black;
+    transition: all 0.3s ease;
+  }
+
+  &::before {
+    transform: rotate(-45deg);
+  }
+
+  &::after {
+    transform: rotate(45deg);
+  }
+
+  &:not(.ais-CurrentRefinements-button--static) {
+    &:hover {
+      &::before,
+      &::after {
+        background: $black-darken;
+      }
+    }
+  }
+}
+
+
+/*
+* FLAG
+*/
+@mixin flag {
+  background: $grey-darken;
+  color: $black;
+  border-radius: 8.5px;
+  padding: 1px 8px;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: normal;
+}
+
+
+
+/*
+* BADGE
+*/
+@mixin badge {
+  // @include addOpacityOnHexadecimal(0.16, $bgColor);
+  // color: $textColor;
+  border-radius: 14px;
+  padding: 4px 8px;
+  font-size: 12px;
+}
+
+@mixin badge--colored($textColor, $bgColor) {
+  background: $bgColor;
+  color: $textColor;
+  border-color: $borderColor;
+}
+
+
+
+/******** OLD ********/
+
+// TAG BASIQUE SANS EFFET BOUTON
+// @mixin tag($textColor, $bgColor, $borderColor, $isButton: false, $hoverTxtColor: '',$hoverBgColor: '', $isPromoted:false) {
+//   display: inline-block;
+//   padding: 9px 16px;
+//   border-radius: 16px;
+//   text-align: center;
+//   font-family: $hkGrotesk;
+//   font-size: 12px;
+//   line-height: 13px;
+//   letter-spacing: 1.27px;
+//   background: $bgColor;
+//   color: $textColor;
+//   border: 1px solid transparent;
+//   border-color: $borderColor;
+//   cursor: cursor;
+//   transition: all 0.3s ease;
+
+
+//   /*
+//   * isButton = each tag which acts like a button (hover, cursor and cross)
+//   */ 
+//   @if $isButton {
+//     cursor: pointer;
+//     position: relative;
+//     padding-right: 30px;
+//     &::before,
+//     &::after {
+//       content: '';
+//       display: block;
+//       position: absolute;
+//       width: 1px;
+//       height: 12px;
+//       right: 12px;
+//       top: 10px;
+//       background: $textColor;
+//       transition: background 0.3s ease;
+//     }
+
+//     &::before {
+//       transform: rotate(-45deg);
+//     }
+
+//     &::after {
+//       transform: rotate(45deg);
+//     }
+
+//     &:not(.ais-CurrentRefinements-button--static) {
+//       &:hover {
+//         background: $hoverBgColor;
+//         border-color: $hoverBgColor;
+//         color: $hoverTxtColor;
+//         &::before,
+//         &::after {
+//           background-color: $hoverTxtColor;
+//         }
+//       }
+//     }
+//   }
+
+//   /*
+//   * isPromoted type of CTA button 
+//   */ 
+//   @if $isPromoted {
+//     @include addOpacityOnHexadecimal(0.08, $bgColor);
+
+//     &:not(.ais-CurrentRefinements-button--static) {
+//       &:hover {
+//         background: $hoverBgColor;
+//         border-color: $hoverBgColor;
+//         color: $hoverTxtColor;
+//         &::before,
+//         &::after {
+//           background-color: $hoverTxtColor;
+//         }
+//       }
+//     }
+//   }
+
+//   // @include respond-to($md-up) {
+//   //   font-size: 13px;
+//   //   line-height: 16px;
+//   //   letter-spacing: 1.5px;
+//   //   padding: 11px 15px;
+
+//   //   @if $isDeletable {
+//   //     padding-right: 35px;
+
+//   //     &::before,
+//   //     &::after {
+//   //       right: 17px;
+//   //       top: 12px;
+//   //     }
+//   //   }
+//   // }
+// }
+
+
+

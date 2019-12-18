@@ -1,0 +1,28 @@
+// Helper Classes
+//
+// Common helper classes
+//
+// Styleguide 6
+
+// visuallyhidden
+//
+// Allow to hide a button keeping it available to screen reader and other assistive technology <br/>
+// see https://www.w3.org/WAI/tutorials/forms/labels/#note-on-hiding-elements for more informations
+//
+// Markup:
+// <button>This button will be visible and interpreted by screen readers.</button><br/>
+// <button style="display: none;">This button won't be visible AND WON'T be interpreted by screen readers.</button><br/>
+// <button class="visuallyhidden">This button won't be visible BUT WILL be interpreted by screen readers</button>
+//
+// Styleguide 6.2
+
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}

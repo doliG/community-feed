@@ -1,0 +1,26 @@
+@import 'DUPLICATE_NGX_assets/css/global/_mixins';
+@import 'global/form/_form_mixins';
+
+.searchInput {
+  .ais-SearchBox-input {
+    @include vc-form-text-input;
+    padding-left: 30px;
+    -webkit-appearance: none;
+    border-radius: 0;
+    border-color: $black-soft;
+  }
+
+  .ais-SearchBox-submit {
+    position: absolute;
+    top: 20px;
+    left: 40px;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}

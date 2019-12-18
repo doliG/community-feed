@@ -1,0 +1,24 @@
+@import 'global/form/_form-text';
+@import 'global/form/_form-select';
+@import 'global/form/_form-checkbox';
+@import 'global/form/_form-searchbar';
+@import "global/form/_form-checkbox-switch";
+@import 'global/form/_form-radio';
+
+.vc__label {
+  display: block;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #ababab;
+  letter-spacing: 0.1em;
+  font-size: 13px;
+  line-height: 16px;
+  padding-bottom: 10px;
+}
+
+.vc-form__error {
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 16px;
+  color: $red;
+}

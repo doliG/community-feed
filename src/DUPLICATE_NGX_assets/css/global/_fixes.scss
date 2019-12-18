@@ -1,0 +1,39 @@
+@import 'DUPLICATE_NGX_assets/css/global/_variables';
+@import 'DUPLICATE_NGX_assets/css/global/_mixins';
+
+
+@include respond-to($sm-down) {
+  .hasBanner.hasAccessibilityLink vc-banner:first-of-type {
+    top: 24px;
+  }
+}
+
+@media (max-width: #{upper-bound($md-range)}) {
+
+
+  .hasSmartBanner {
+    .hasBanner {
+      vc-banner:first-of-type {
+        top: 80px;
+      }
+
+      &.hasAccessibilityLink {
+        vc-banner:first-of-type {
+          top: 104px;
+        }
+
+        .withBanner:not(.isSticky) {
+          margin-top: 60px;
+        }
+      }
+    }
+
+    .accessibilityTopLink {
+      position: absolute;
+      top: 80px;
+      left: 0;
+      right: 0;
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,46 @@
+// MAT-RADIO-BUTTON
+$radiusSize: 18px;
+$externalRadiusSize: 20px;
+
+.mat-radio-button {
+  .mat-radio-container {
+    width: $externalRadiusSize;
+    height: $externalRadiusSize;
+    top: $externalRadiusSize - $radiusSize;
+
+    .mat-radio-outer-circle {
+      border-width: 1px;
+      border-color: $grey-light;
+      width: $externalRadiusSize;
+      height: $externalRadiusSize;
+    }
+
+    .mat-radio-inner-circle {
+      width: $radiusSize;
+      height: $radiusSize;
+      top: ($externalRadiusSize - $radiusSize) / 2;
+      left: ($externalRadiusSize - $radiusSize) / 2;
+    }
+  }
+
+  .mat-radio-label-content {
+    padding-left: 15px;
+  }
+
+  &.mat-accent {
+    &.mat-radio-checked {
+      .mat-radio-outer-circle {
+        //sass-lint:disable no-important
+        border-color: $grey-light !important;
+        //sass-lint:enable no-important
+      }
+    }
+
+    .mat-radio-ripple {
+      .mat-ripple-element {
+        // opacity: 0.2;
+        background-color: $colorBrand-dark;
+      }
+    }
+  }
+}

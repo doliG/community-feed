@@ -1,0 +1,39 @@
+@import 'global/_variables';
+@import 'global/_mixins';
+
+.ais-CurrentRefinements-reset {
+  display: inline-block;
+  font-size: 16px;
+  color: $grey-medium;
+  margin-left: 11px;
+}
+
+.ais-CurrentRefinements-list {
+  display: inline-block;
+  margin-left: -10px;
+  margin-bottom: -10px;
+}
+
+.ais-CurrentRefinements-item {
+  display: inline-block;
+  margin-left: 10px;
+  margin-bottom: 10px;
+
+  .ais-CurrentRefinements-button {
+    @include tag;
+    @include tag--colored($black, $grey-darken, $grey-darken); // default type
+    @include linkable($grey-line, $grey-line);
+    @include crossable;
+
+    &--static {
+      @include tag;
+      @include tag--colored($black, $grey-darken, $grey-darken); // default type
+      @include linkable($grey-line, $grey-line);
+
+      &::before,
+      &::after {
+        content: none;
+      }
+    }
+  }
+}

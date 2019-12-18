@@ -1,0 +1,188 @@
+@import '~@angular/material/theming'; // sass-lint:disable-line clean-import-paths
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core(); // sass-lint:disable-line empty-args
+
+// brand color ?!
+$vc-primary: (
+  50: #ffebe5,
+  100: #ffcebe,
+  200: #ffad93,
+  300: #ff8c68,
+  400: #ff7347,
+  500: #ff5a27,
+  600: #ff5223,
+  700: #ff481d,
+  800: #ff3f17,
+  900: #ff2e0e,
+  A100: #fff,
+  A200: #fff7f6,
+  A400: #ffcac3,
+  A700: #ffb3aa,
+  contrast: (
+    50: #000,
+    100: #000,
+    200: #000,
+    300: #000,
+    400: #000,
+    500: #000,
+    600: #000,
+    700: #fff,
+    800: #fff,
+    900: #fff,
+    A100: #000,
+    A200: #000,
+    A400: #000,
+    A700: #000
+  )
+);
+
+// old 
+// $vc-primary: (
+//   50: #fbf1ec,
+//   100: #f5dcd0,
+//   200: #efc4b1,
+//   300: #e8ac91,
+//   400: #e39b7a,
+//   500: #de8962,
+//   600: #da815a,
+//   700: #d57650,
+//   800: #d16c46,
+//   900: #c85934,
+//   A100: #fff,
+//   A200: #ffe5dd,
+//   A400: #ffbeaa,
+//   A700: #ffaa90,
+//   contrast: (
+//     50: #000,
+//     100: #000,
+//     200: #000,
+//     300: #000,
+//     400: #000,
+//     500: #000,
+//     600: #000,
+//     700: #000,
+//     800: #000,
+//     900: #fff,
+//     A100: #000,
+//     A200: #000,
+//     A400: #000,
+//     A700: #000
+//   )
+// );
+
+// black ?!
+$vc-accent: (
+  50: #e4e4e4,
+  100: #bcbcbc,
+  200: #8f8f8f,
+  300: #626262,
+  400: #404040,
+  500: #1e1e1e,
+  600: #1a1a1a,
+  700: #161616,
+  800: #121212,
+  900: #0a0a0a,
+  A100: #e07171,
+  A200: #d74747,
+  A400: #eb0000,
+  A700: #d10000,
+  contrast: (
+    50: #000,
+    100: #000,
+    200: #000,
+    300: #fff,
+    400: #fff,
+    500: #fff,
+    600: #fff,
+    700: #fff,
+    800: #fff,
+    900: #fff,
+    A100: #000,
+    A200: #fff,
+    A400: #fff,
+    A700: #fff
+  )
+);
+
+// old
+// $vc-accent: (
+//   50: #f9f0ec,
+//   100: #f0d9cf,
+//   200: #e6c0af,
+//   300: #dba78e,
+//   400: #d49476,
+//   500: #cc815e,
+//   600: #c77956,
+//   700: #c06e4c,
+//   800: #b96442,
+//   900: #ad5131,
+//   A100: #fff7f4,
+//   A200: #ffd0c1,
+//   A400: #ffa98e,
+//   A700: #ff9674,
+//   contrast: (
+//     50: #000,
+//     100: #000,
+//     200: #000,
+//     300: #000,
+//     400: #000,
+//     500: #000,
+//     600: #000,
+//     700: #000,
+//     800: #fff,
+//     900: #fff,
+//     A100: #000,
+//     A200: #000,
+//     A400: #000,
+//     A700: #000
+//   )
+// );
+
+$vc-warn: (
+  50: #fce4e6,
+  100: #f7bac2,
+  200: #f28d99,
+  300: #ed5f70,
+  400: #e93c51,
+  500: #e51a32,
+  600: #e2172d,
+  700: #de1326,
+  800: #da0f1f,
+  900: #d30813,
+  A100: #fffcfd,
+  A200: #ffc9cb,
+  A400: #ff969a,
+  A700: #ff7d81,
+  contrast: (
+    50: #000,
+    100: #000,
+    200: #000,
+    300: #000,
+    400: #fff,
+    500: #fff,
+    600: #fff,
+    700: #fff,
+    800: #fff,
+    900: #fff,
+    A100: #000,
+    A200: #000,
+    A400: #000,
+    A700: #000
+  )
+);
+
+$vc-themeprimary: mat-palette($vc-primary);
+$vc-themeaccent: mat-palette($vc-accent);
+$vc-themewarn: mat-palette($vc-warn);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+$vc-apptheme: mat-light-theme($vc-themeprimary, $vc-themeaccent, $vc-themewarn);
+
+// Apply` our own custom theme
+@include angular-material-theme($vc-apptheme);

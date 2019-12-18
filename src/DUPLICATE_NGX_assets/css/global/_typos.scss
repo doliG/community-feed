@@ -1,0 +1,157 @@
+@import 'DUPLICATE_NGX_assets/css/global/_variables';
+@import 'DUPLICATE_NGX_assets/css/global/_mixins';
+
+// Typo
+//
+// All the styles for the titles and paragraphs.
+//
+// Styleguide 3
+
+@for $index from 0 through 6 {
+  .vc-h#{$index} {
+    display: block;
+    color: $black-soft;
+  }
+}
+
+.vc-h1 {
+  @include heading1;
+}
+
+.vc-h2 {
+  @include heading2;
+}
+
+.vc-h3 {
+  @include heading3;
+}
+
+.vc-h4 {
+  @include heading4;
+}
+
+.vc-h5 {
+  @include heading5;
+}
+
+.vc-h6 {
+  @include heading6;
+}
+
+// Vc Headers
+//
+// H1 (for Product Page title)<br /><code>.vc-h1</code>.<br />
+// font-family: HCo Quatro Light / MOBILE: font-size: 50px; line-height: 50px; / DESKTOP: font-size: 100px; line-height: 100px;
+// <article style="border-bottom:solid 1px #CCC;margin: 0 -1em;padding:1em;"><h3 style="color: #e87e04;font-size:1.125rem;font-weight:700;">Example</h3>
+// <h1 class="vc-h1">Header 1</h1></article><br />
+//
+// H2 (for Homepage, Product Page, Brand Page, Catalog Page)<br /><code>.vc-h2</code>.<br />
+// font-family: HCo Quatro Light / MOBILE: font-size: 40px; line-height: 40px; / DESKTOP: font-size: 80px / line-height: 80px
+// <article style="border-bottom:solid 1px #CCC;margin: 0 -1em;padding:1em;"><h3 style="color: #e87e04;font-size:1.125rem;font-weight:700;">Example</h3>
+// <h2 class="vc-h2">Header 2</h2></article><br />
+//
+// H3 (for Onboarding)<br /><code>.vc-h3</code>.<br />
+// font-family: HCo Quatro Light / MOBILE: font-size: 36px; line-height: 36px / DESKTOP: font-size: 38px; line-height: 38px;
+// <article style="border-bottom:solid 1px #CCC;margin: 0 -1em;padding:1em;"><h3 style="color: #e87e04;font-size:1.125rem;font-weight:700;">Example</h3>
+// <h3 class="vc-h3">Header 3</h3></article><br />
+//
+// H4 (for generic titles)<br /><code>.vc-h4</code>.<br />
+// font-family: Hk Grotesk Light / MOBILE: font-size: 26px; line-height: 32px / DESKTOP: font-size: 32px; line-height: 40px;
+// <article style="border-bottom:solid 1px #CCC;margin: 0 -1em;padding:1em;"><h3 style="color: #e87e04;font-size:1.125rem;font-weight:700;">Example</h3>
+// <h4 class="vc-h4">Header 4</h4></article><br />
+//
+// H5 (for user's name)<br /><code>.vc-h5</code>.<br />
+// font-family: HCo Quatro Light / MOBILE: font-size: 22px; line-height: 30px; / DESKTOP: font-size: 24px;
+// <article style="border-bottom:solid 1px #CCC;margin: 0 -1em;padding:1em;"><h3 style="color: #e87e04;font-size:1.125rem;font-weight:700;">Example</h3>
+// <h5 class="vc-h5">Header 5</h5></article><br />
+//
+// H6 (for small titles and highlights)<br /><code>.vc-h6</code>.<br />
+// font-family: HK Grotesk Bold / MOBILE: font-size: 18px; line-height: 26px; / DESKTOP: line-height: 28px;
+// <article style="margin: 0 -1em;padding:1em 1em 0 1em;"><h3 style="color: #e87e04;font-size:1.125rem;font-weight:700;">Example</h3>
+// <h6 class="vc-h6">Header 6</h6></article>
+//
+// Styleguide 3.1
+
+.vc-body {
+  @include body1;
+}
+
+.vc-body2 {
+  @include body2;
+}
+
+.vc-body3 {
+  @include body3;
+}
+
+
+.vc-text-l {
+  @include large-text;
+}
+
+.vc-text-important {
+  @include important-text;
+}
+
+.vc-text-m {
+  @include main-text;
+}
+
+.vc-text-s {
+  @include small-text;
+}
+
+.vc-text-xs {
+  @include x-small-text;
+}
+
+// Vc Text
+//
+// Large Text<br /><code>.vc-text-l</code>.<br />
+// font-family: HK Grotesk; / MOBILE : font-size: 16px ; line-height: 24px; / DESKTOP : line-height: 18px; line-height: 27px;
+// <article style="border-bottom:solid 1px #CCC;margin: 0 -1em;padding:1em;"><h3 style="color: #e87e04;font-size:1.125rem;font-weight:700;">Example</h3>
+// <div class="vc-text-l">Paragraph for current text using css class vc-text-l.</div></article><br />
+//
+// Important Text<br /><code>.vc-text-important</code>.<br />
+// font-family: HK Grotesk; font-weight: 600; / MOBILE : font-size: 14px ; line-height: 21px; / DESKTOP : line-height: 16px; line-height: 24px;
+// <article style="border-bottom:solid 1px #CCC;margin: 0 -1em;padding:1em;"><h3 style="color: #e87e04;font-size:1.125rem;font-weight:700;">Example</h3>
+// <div class="vc-text-important">Paragraph for current text using css class vc-text-important.</div></article><br />
+//
+// Main Text<br /><code>.vc-text-m</code>.<br />
+// font-family: HK Grotesk; / MOBILE : font-size: 14px ; line-height: 21px; / DESKTOP : line-height: 16px; line-height: 24px;
+// <article style="border-bottom:solid 1px #CCC;margin: 0 -1em;padding:1em;"><h3 style="color: #e87e04;font-size:1.125rem;font-weight:700;">Example</h3>
+// <div class="vc-text-m">Paragraphfor current text using css class vc-text-m.</div></article><br />
+//
+// Small Text<br /><code>.vc-text-s</code>.<br />
+// font-family: HK Grotesk; / MOBILE : font-size: 12px ; line-height: 20px; / DESKTOP : line-height: 14px; line-height: 21px;
+// <article style="border-bottom:solid 1px #CCC;margin: 0 -1em;padding:1em;"><h3 style="color: #e87e04;font-size:1.125rem;font-weight:700;">Example</h3>
+// <div class="vc-text-s">Paragraph for current text using css class vc-text-s.</div></article><br />
+//
+// X Small Text<br /><code>.vc-text-xs</code>.<br />
+// font-family: HK Grotesk;  font-size: 12px ; line-height: 20px;
+// <article style="border-bottom:solid 1px #CCC;margin: 0 -1em;padding:1em;"><h3 style="color: #e87e04;font-size:1.125rem;font-weight:700;">Example</h3>
+// <div class="vc-text-xs">Paragraph for current text using css class vc-text-xs.</div></article>
+//
+// Styleguide 3.2
+
+.vc-link {
+  @include link;
+}
+
+.vc-linkDangerous {
+  @include link-dangerous;
+}
+
+// Vc Link
+//
+// Vc Link<br /><code>.vc-link</code>.<br />
+// Vc links have all the same size.
+// <article style="border-bottom:solid 1px #CCC;margin: 0 -1em;padding:1em;"><h3 style="color: #e87e04;font-size:1.125rem;font-weight:700;">Example</h3>
+// <a href=' #' style='color:#2b2b2b;text-decoration:underline;' onMouseOver="this.style.color='#b5592c'" onMouseOut="this.style.color='#2b2b2b'" class='vc-link'>a simple link</a></article><br />
+//
+// Vc link Dangerous<br /><code>.vc-linkDangerous</code>.<br />
+// Same as Vc Link but in red and no mouse over effect.
+// <article style="border-bottom:solid 1px #CCC;margin: 0 -1em;padding:1em;"><h3 style="color: #e87e04;font-size:1.125rem;font-weight:700;">Example</h3>
+// <a href='#' style='color:#e51a32;text-decoration:underline;' class='vc-linkDangerous'>a dangerous link (heeee heee).</a></article><br />
+//
+// Styleguide 3.3

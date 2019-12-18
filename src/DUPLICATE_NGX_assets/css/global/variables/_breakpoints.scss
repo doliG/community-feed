@@ -1,0 +1,70 @@
+// SIZES
+$outerPadding-md: 20px;
+
+//BREAKPOINTS
+
+// row values in pixels
+$sm: 414;
+$md: 768;
+$lg: 1024;
+$xl: 1460;
+$innerXl: calc(#{$xl} - #{$outerPadding-md} * 2);
+
+// Defining ranges
+$xs-range: (
+  0,
+  $sm - 1px
+);
+$sm-range: (
+  $sm + 0px,  // sass-lint:disable-line zero-unit
+  $md - 1px
+);
+$md-range: (
+  $md + 0px,  // sass-lint:disable-line zero-unit
+  $lg - 1px
+);
+$lg-range: (
+  $lg + 0px,  // sass-lint:disable-line zero-unit
+  $xl - 1px
+);
+$xlg-range: ($xl + 0px); // sass-lint:disable-line zero-unit
+
+
+@function lower-bound($range) {
+  @if length($range) <= 0 {
+    @return 0;
+  }
+
+  @return nth($range, 1);
+}
+
+@function upper-bound($range) {
+  @if length($range) < 2 {
+    @return 999999999999;
+  }
+
+  @return nth($range, 2);
+}
+
+//for bootstrap grid generation
+$grid-breakpoints: (
+  xs: 0,
+  sm: lower-bound($sm-range),
+  md: lower-bound($md-range),
+  lg: lower-bound($lg-range),
+  xl: lower-bound($xlg-range)
+);
+
+// Defining media queries
+$landscape: '(orientation: landscape)';
+$portrait: '(orientation: portrait)';
+$xs-only: '(max-width: #{upper-bound($xs-range)})';
+$sm-up: '(min-width: #{lower-bound($sm-range)})';
+$sm-only: '(min-width:#{lower-bound($sm-range)}) and (max-width:#{upper-bound($sm-range)})';
+$sm-down: '(max-width:#{upper-bound($sm-range)})';
+$md-up: '(min-width:#{lower-bound($md-range)})';
+$md-only: '(min-width:#{lower-bound($md-range)}) and (max-width:#{upper-bound($md-range)})';
+$lg-up: '(min-width:#{lower-bound($lg-range)})';
+$lg-only: '(min-width:#{lower-bound($lg-range)}) and (max-width:#{upper-bound($lg-range)})';
+$xl-up: '(min-width:#{lower-bound($xlg-range)})';
+$xl-only: '(min-width:#{lower-bound($xlg-range)})';

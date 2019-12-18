@@ -1,0 +1,289 @@
+@import 'DUPLICATE_NGX_assets/css/global/grid/_grid_mixins';
+
+.innerContainer {
+  display: block;
+  max-width: 100%;
+  margin: 0 auto;
+  padding-left: $outerPadding-md;
+  padding-right: $outerPadding-md;
+}
+
+@include respond-to($xl-up) {
+  .innerContainer {
+    max-width: lower-bound($xlg-range);
+  }
+}
+
+.row--gutter10 {
+  @include grid-gutter(10px);
+}
+
+.row--gutter20 {
+  @include grid-gutter(20px);
+}
+
+@include respond-to($md-up) {
+  .row-md--gutter10 {
+    @include grid-gutter(10px);
+  }
+
+  .row-md--gutter20 {
+    @include grid-gutter(20px);
+  }
+}
+
+// Grid system
+//
+// This grid system is build on 12 columns over you can distribute blocks of contents.<br/>
+// It is responsive and you can change the distribution for each screen sizes.<br/>
+// It is made in flexbox and allows ordering.<br/><br/>
+//
+// N.B : We created this grid system classes because it was one of the first way to deal with responsive layouts. (thanks bootstrap)<br/>
+// this might be very useful like for a catalog page.<br/>
+// But for more complicated layouts with really different layouts between screen sizes please prefer to use <code>flexbox</code> on your own classes (or "css grids" when fully supported).<br/>
+// You will win more flexibility and a cleaner DOM. Experience will show you when to choose the best solution.<br/>
+//
+// Styleguide 5
+
+// Structure
+//
+// You need to conscientiously apply the structure of the grid system to make it work properly.<br/>
+// You will have cells of content (<code>.col</code>) inside rows (<code>.row</code>). Cells have to be direct children of rows and rows can only have cells has direct children.<br/><br/>
+// Each line is <code>.row</code>. But consider row is able to be multiline otherwise we could'nt put blocks on top of each others changing breakpoints.<br />
+// Each cell is define with class <code>.col</code>, then add class .col-(nb) where (nb) is the place the cell take on the line from 1 to 12.<br/><br/>
+// You can use a <code>.innerContainer</code> wrapper to constrain a section with the max size of the site. But it is not mandatory. In some cases you might want to be absolute full size even in large screens.<br/>
+// Never nest <code>.innerContainer</code> classes or outer padding will cumulate.<br />
+//
+// Styleguide 5.1
+
+// Complete Grid
+//
+// This is a complete grid with all the different columns.<br/><br/>
+//   <div class="row row--gutter10" style="margin-bottom:10px;">
+//     <div class="col-12">
+//       <div style="padding:20px;background:#ccc;color:#fff;font-weight:bold;text-align:center;">.col-12</div>
+//     </div>
+//   </div>
+//   <div class="row row--gutter10" style="margin-bottom:10px;">
+//     <div class="col-11">
+//       <div style="padding:20px;background:#ccc;color:#fff;font-weight:bold;text-align:center;">.col-11</div>
+//     </div>
+//     <div class="col-1">
+//       <div style="padding:20px;background:#ccc;color:#fff;font-weight:bold;text-align:center;">.col-1</div>
+//     </div>
+//   </div>
+//   <div class="row row--gutter10" style="margin-bottom:10px;">
+//     <div class="col-10">
+//       <div style="padding:20px;background:#ccc;color:#fff;font-weight:bold;text-align:center;">.col-10</div>
+//     </div>
+//     <div class="col-2">
+//       <div style="padding:20px;background:#ccc;color:#fff;font-weight:bold;text-align:center;">.col-2</div>
+//     </div>
+//   </div>
+//   <div class="row row--gutter10" style="margin-bottom:10px;">
+//     <div class="col-9">
+//       <div style="padding:20px;background:#ccc;color:#fff;font-weight:bold;text-align:center;">.col-9</div>
+//     </div>
+//     <div class="col-3">
+//       <div style="padding:20px;background:#ccc;color:#fff;font-weight:bold;text-align:center;">.col-3</div>
+//     </div>
+//   </div>
+//   <div class="row row--gutter10" style="margin-bottom:10px;">
+//     <div class="col-8">
+//       <div style="padding:20px;background:#ccc;color:#fff;font-weight:bold;text-align:center;">.col-8</div>
+//     </div>
+//     <div class="col-4">
+//       <div style="padding:20px;background:#ccc;color:#fff;font-weight:bold;text-align:center;">.col-4</div>
+//     </div>
+//   </div>
+//   <div class="row row--gutter10" style="margin-bottom:10px;">
+//     <div class="col-7">
+//       <div style="padding:20px;background:#ccc;color:#fff;font-weight:bold;text-align:center;">.col-7</div>
+//     </div>
+//     <div class="col-5">
+//       <div style="padding:20px;background:#ccc;color:#fff;font-weight:bold;text-align:center;">.col-5</div>
+//     </div>
+//   </div>
+//   <div class="row row--gutter10" style="margin-bottom:10px;">
+//     <div class="col-6">
+//       <div style="padding:20px;background:#ccc;color:#fff;font-weight:bold;text-align:center;">.col-6</div>
+//     </div>
+//     <div class="col-6">
+//       <div style="padding:20px;background:#ccc;color:#fff;font-weight:bold;text-align:center;">.col-6</div>
+//     </div>
+//   </div>
+//   <div class="row row--gutter10" style="margin-bottom:10px;">
+//     <div class="col-4">
+//       <div style="padding:20px;background:#ccc;color:#fff;font-weight:bold;text-align:center;">.col-4</div>
+//     </div>
+//     <div class="col-4">
+//       <div style="padding:20px;background:#ccc;color:#fff;font-weight:bold;text-align:center;">.col-4</div>
+//     </div>
+//     <div class="col-4">
+//       <div style="padding:20px;background:#ccc;color:#fff;font-weight:bold;text-align:center;">.col-4</div>
+//     </div>
+//   </div>
+//   <div class="row row--gutter10" style="margin-bottom:10px;">
+//     <div class="col-3">
+//       <div style="padding:20px;background:#ccc;color:#fff;font-weight:bold;text-align:center;">.col-3</div>
+//     </div>
+//     <div class="col-3">
+//       <div style="padding:20px;background:#ccc;color:#fff;font-weight:bold;text-align:center;">.col-3</div>
+//     </div>
+//     <div class="col-3">
+//       <div style="padding:20px;background:#ccc;color:#fff;font-weight:bold;text-align:center;">.col-3</div>
+//     </div>
+//     <div class="col-3">
+//       <div style="padding:20px;background:#ccc;color:#fff;font-weight:bold;text-align:center;">.col-3</div>
+//     </div>
+//   </div>
+//   <div class="row row--gutter10" style="margin-bottom:10px;">
+//     <div class="col-2">
+//       <div style="padding:20px;background:#ccc;color:#fff;font-weight:bold;text-align:center;">.col-2</div>
+//     </div>
+//     <div class="col-2">
+//       <div style="padding:20px;background:#ccc;color:#fff;font-weight:bold;text-align:center;">.col-2</div>
+//     </div>
+//     <div class="col-2">
+//       <div style="padding:20px;background:#ccc;color:#fff;font-weight:bold;text-align:center;">.col-2</div>
+//     </div>
+//     <div class="col-2">
+//       <div style="padding:20px;background:#ccc;color:#fff;font-weight:bold;text-align:center;">.col-2</div>
+//     </div>
+//     <div class="col-2">
+//       <div style="padding:20px;background:#ccc;color:#fff;font-weight:bold;text-align:center;">.col-2</div>
+//     </div>
+//     <div class="col-2">
+//       <div style="padding:20px;background:#ccc;color:#fff;font-weight:bold;text-align:center;">.col-2</div>
+//     </div>
+//   </div>
+//   <div class="row row--gutter10" style="margin-bottom:10px;">
+//     <div class="col-1">
+//       <div style="padding:20px;background:#ccc;color:#fff;font-weight:bold;text-align:center;">.col-1</div>
+//     </div>
+//     <div class="col-1">
+//       <div style="padding:20px;background:#ccc;color:#fff;font-weight:bold;text-align:center;">.col-1</div>
+//     </div>
+//     <div class="col-1">
+//       <div style="padding:20px;background:#ccc;color:#fff;font-weight:bold;text-align:center;">.col-1</div>
+//     </div>
+//     <div class="col-1">
+//       <div style="padding:20px;background:#ccc;color:#fff;font-weight:bold;text-align:center;">.col-1</div>
+//     </div>
+//     <div class="col-1">
+//       <div style="padding:20px;background:#ccc;color:#fff;font-weight:bold;text-align:center;">.col-1</div>
+//     </div>
+//     <div class="col-1">
+//       <div style="padding:20px;background:#ccc;color:#fff;font-weight:bold;text-align:center;">.col-1</div>
+//     </div>
+//     <div class="col-1">
+//       <div style="padding:20px;background:#ccc;color:#fff;font-weight:bold;text-align:center;">.col-1</div>
+//     </div>
+//     <div class="col-1">
+//       <div style="padding:20px;background:#ccc;color:#fff;font-weight:bold;text-align:center;">.col-1</div>
+//     </div>
+//     <div class="col-1">
+//       <div style="padding:20px;background:#ccc;color:#fff;font-weight:bold;text-align:center;">.col-1</div>
+//     </div>
+//     <div class="col-1">
+//       <div style="padding:20px;background:#ccc;color:#fff;font-weight:bold;text-align:center;">.col-1</div>
+//     </div>
+//     <div class="col-1">
+//       <div style="padding:20px;background:#ccc;color:#fff;font-weight:bold;text-align:center;">.col-1</div>
+//     </div>
+//     <div class="col-1">
+//       <div style="padding:20px;background:#ccc;color:#fff;font-weight:bold;text-align:center;">.col-1</div>
+//     </div>
+//   </div>
+//
+// Styleguide 5.2
+
+// Grid responsive
+//
+// The Grid system is Mobile First. It means :
+// Default classes <code>.col-[number]</code> will apply on all screens.<br/>
+// Extra small classes is equal to default so no need to use it.<br/>
+// Small classes <code>.col-sm-[number]</code> will apply from 375px to infinite and overwrite previous ones.<br/>
+// Medium classes <code>.col-md-[number]</code> will apply from 768px to infinite and overwrite previous ones.<br/>
+// Large classes <code>.col-lg-[number]</code> will apply from 1024px to infinite and overwrite previous ones.<br/>
+// Extra Large classes <code>.col-xl-[number]</code> will apply from 1460px to infinite and overwrite previous ones.
+//
+// Markup:
+//   <div class="row">
+//     <div class="col-12 col-md-6 col-lg-12" style="margin-bottom:30px;">
+//       <div style="padding:20px;background:#ccc;color:#fff;font-weight:bold;text-align:center;">
+//          .col-12<br />
+//          .col-md-6<br />
+//          .col-lg-12
+//       </div>
+//     </div>
+//     <div class="col-12 col-md-6 col-lg-4" style="margin-bottom:30px;">
+//       <div style="padding:20px;background:#ccc;color:#fff;font-weight:bold;text-align:center;">
+//          .col-12<br />
+//          .col-md-6<br />
+//          .col-lg-4
+//       </div>
+//     </div>
+//     <div class="col-12 col-md-6 col-lg-4" style="margin-bottom:30px;">
+//       <div style="padding:20px;background:#ccc;color:#fff;font-weight:bold;text-align:center;">
+//          .col-12<br />
+//          .col-md-6<br />
+//          .col-lg-4
+//       </div>
+//     </div>
+//     <div class="col-12 col-md-6 col-lg-4" style="margin-bottom:30px;">
+//      <div style="padding:20px;background:#ccc;color:#fff;font-weight:bold;text-align:center;">
+//          .col-12<br />
+//          .col-md-6<br />
+//          .col-lg-4
+//       </div>
+//     </div>
+//
+// Styleguide 5.3
+
+// Gutters
+//
+// the default vertical space between cols is 30px. You can use modifier classes oon rows to change it : <br/>
+// <code>.row--gutter10</code> for 10 pixels<br/>
+// <code>.row--gutter20</code> for 20 pixels<br/>
+// the horizontal space will have to be manage on cells block directly with specific classes (example : .article class on a news feed)
+//
+// Markup:
+//   <div class="row row--gutter10" style="margin-bottom: 10px;">
+//     <div class="col-6">
+//       <div style="padding:20px;background:#ccc;color:#fff;font-weight:bold;text-align:center;">
+//          .col-6 // gutter 10px
+//       </div>
+//     </div>
+//     <div class="col-6">
+//       <div style="padding:20px;background:#ccc;color:#fff;font-weight:bold;text-align:center;">
+//          .col-6 // gutter 10px
+//       </div>
+//     </div>
+//   </div>
+//   <div class="row row--gutter20" style="margin-bottom: 20px;">
+//     <div class="col-6">
+//       <div style="padding:20px;background:#ccc;color:#fff;font-weight:bold;text-align:center;">
+//          .col-6 // gutter 20px
+//       </div>
+//     </div>
+//     <div class="col-6">
+//       <div style="padding:20px;background:#ccc;color:#fff;font-weight:bold;text-align:center;">
+//          .col-6 // gutter 30px
+//       </div>
+//     </div>
+//   </div>
+//   <div class="row" style="margin-bottom: 30px;">
+//     <div class="col-6">
+//       <div style="padding:20px;background:#ccc;color:#fff;font-weight:bold;text-align:center;">
+//          .col-6 // gutter default to 30px
+//       </div>
+//     </div>
+//     <div class="col-6">
+//       <div style="padding:20px;background:#ccc;color:#fff;font-weight:bold;text-align:center;">
+//          .col-6 // gutter default to 30px
+//       </div>
+//     </div>
+//   </div>
+//
+// Styleguide 5.4

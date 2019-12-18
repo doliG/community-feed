@@ -1,0 +1,211 @@
+@import '_variables';
+@import 'mixins/_mixins-tags';
+
+// Tags, Flags & Badges
+//
+// All tags, flags and badges styles. <br>
+// Needed skills : BEM and mobile first.
+//
+// Styleguide 5
+
+
+// Tags Types
+//
+// No responsive difference for tags. They have the same size in both mobile and desktop. <br><br>
+// For all tags, use <b>".vc-tag"</b> as basic css class. Still the tag needs you to add its type and behaviors: <br>
+// + one of the 3 classes of <b>button type</b>: default, promoted or outline. <br>
+// + one of the 3 classes of <b>button behavior</b>: linkable or closable.
+//
+// Styleguide 5.1
+
+.vc-tag {
+  @include tag;
+}
+
+
+
+// Default tag 
+// 
+// To generate a tag you need to add <b>vc-tag</b> and its tag type <b>vc-tag--default</b>. <br>
+// No hover effect.
+// 
+// Markup:
+// <p class="vc-tag vc-tag--default">Default tag</p>
+//
+// Styleguide 5.1.1
+
+.vc-tag--default {
+  @include tag--colored($black, $grey-darken, $grey-darken);
+
+  &.vc-tag--link {
+    @include linkable($grey-line, $grey-line);
+  }
+
+  &.vc-tag--cross {
+    @include linkable($grey-line, $grey-line);
+    @include crossable;
+  }
+}
+
+
+
+// Promoted tag
+// 
+// To generate a tag you need to add <b>vc-tag</b> and its tag type <b>vc-tag--promoted</b>. <br>
+// No hover effect.
+// 
+// Markup:
+// <p class="vc-tag vc-tag--promoted">Promoted tag</p>
+//
+// Styleguide 5.1.2
+
+.vc-tag--promoted {
+  @include tag--colored($colorBrand, transparent);
+  @include add-opacity-on-hexadecimal(0.08, $colorBrand);
+
+  &.vc-tag--link {
+    @include linkable($colorBrand);
+  }
+
+  &.vc-tag--cross {
+    @include linkable($colorBrand);
+    @include crossable;
+
+    &::before,
+    &::after {
+      background: $colorBrand;
+    }
+  }
+}
+
+
+
+// Outline tag
+// 
+// To generate a tag you need to add <b>vc-tag</b> and its tag type <b>vc-tag--outline</b>. <br>
+// No hover effect.
+// 
+// Markup:
+// <p class="vc-tag vc-tag--outline">Outline tag</p>
+//
+// Styleguide 5.1.3
+
+.vc-tag--outline {
+  @include tag--colored($black, white, $grey-line);
+
+  &.vc-tag--link {
+    @include linkable(white, $black);
+  }
+
+  &.vc-tag--cross {
+    @include linkable(white, $black);
+    @include crossable;
+  }
+}
+
+
+
+// Tags Behaviors 
+//
+// Styleguide 5.2
+
+// Linkable tag 
+//
+// When you need a tag which is a link = CURSOR + HOVER effect.
+// To generate this tag you need to add <b>vc-tag</b>. <br><br>
+// Then choose the type you want:
+// + default: vc-tag--default, <br> 
+// + promoted: vc-tag--promoted, <br> 
+// + outine: vc-tag--outline. <br>
+// 
+// Markup:
+// <p class="vc-tag vc-tag--default vc-tag--link">Linkable default tag</p>
+// <p class="vc-tag vc-tag--promoted vc-tag--link">Linkable promoted tag</p>
+// <p class="vc-tag vc-tag--outline vc-tag--link">Linkable outline tag</p>
+// 
+// Styleguide 5.2.1
+
+// .vc-tag--default {
+//   &.vc-tag--link {
+//     @include linkable($grey-line, $grey-line);
+//   }
+// }
+
+
+
+
+// Crossable tag 
+//
+// When you need a tag which is a filter (no link) = CROSS + CURSOR + HOVER effect.
+// To generate this tag you need to add <b>vc-tag</b>. <br><br>
+// Then choose the type you want:
+// + default: vc-tag--default, <br> 
+// + promoted: vc-tag--promoted, <br> 
+// + outine: vc-tag--outline. <br>
+// 
+// Markup:
+// <p class="vc-tag vc-tag--default vc-tag--cross">Linkable default tag</p>
+// <p class="vc-tag vc-tag--promoted vc-tag--cross">Linkable promoted tag</p>
+// <p class="vc-tag vc-tag--outline vc-tag--cross">Linkable outline tag</p>
+// 
+// Styleguide 5.2.2
+
+
+
+
+// Flags
+//
+// For all flags, just use <b>".vc-flag"</b> as css class. <br/>
+// Flags are only visible in desktop.
+//
+// Markup:
+// <span class="vc-flag">Flag desktop</span>
+//
+// Styleguide 5.3
+
+.vc-flag {
+  @include flag;
+}
+
+
+
+// Bagdes Types
+//
+// For all badges, use <b>".vc-badge"</b> as basic css class. <br/>
+//
+// Styleguide 5.4
+
+
+// Expert Badge
+//
+// To generate an expert badge you need to add <b>".vc-badge"</b> and its tag type <b>".vc-tag--expert"</b>.<br>
+// N.B: An icon inside the badge is still missing.. to follow.. 
+// 
+// Markup:
+// <span class="vc-badge vc-badge--expert">Expert seller</span>
+//
+// Styleguide 5.4.1
+
+.vc-badge--expert {
+  @include badge;
+  @include tag--colored($colorExpert);
+  @include add-opacity-on-hexadecimal(0.08, $colorExpert);
+}
+
+
+
+// Trusted Badge
+//
+// To generate a trusted badge you need to add <b>".vc-badge"</b> and its tag type <b>".vc-tag--trusted"</b>.<br>
+// N.B: An icon inside the badge is still missing.. to follow.. 
+// 
+// Markup:
+// <span class="vc-badge vc-badge--trusted">Trusted seller</span>
+//
+// Styleguide 5.4.2
+
+.vc-badge--trusted {
+  @include badge;
+  @include tag--colored($colorTrusted);
+  @include add-opacity-on-hexadecimal(0.08, $colorTrusted);
+}

@@ -1,0 +1,61 @@
+@import 'DUPLICATE_NGX_assets/css/global/_variables';
+@import 'DUPLICATE_NGX_assets/css/global/_mixins';
+
+.vc-form-checkbox__input {
+  display: none;
+}
+
+.vc-form-checkbox__label {
+  display: inline-block;
+  position: relative;
+  padding-left: 24px;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 20px;
+
+  a {
+    text-decoration: underline;
+  }
+}
+
+.vc-form-checkbox__label::before,
+.vc-form-checkbox__label::after {
+  display: block;
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 2px;
+}
+
+.vc-form-checkbox__label::before {
+  width: 14px;
+  height: 14px;
+  border: 1px solid #ababab;
+  background: #fff;
+}
+
+.vc-form-checkbox__label--error {
+  color: $red;
+
+  &::before {
+    border-color: $red;
+  }
+}
+
+.vc-form-checkbox__input:checked {
+  & + .vc-form-checkbox__label::before {
+    background: $mainColor-dark;
+    border-color: $mainColor-dark;
+  }
+
+  & + .vc-form-checkbox__label::after {
+    top: 5px;
+    left: 3px;
+    width: 10px;
+    height: 8.33px;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns:svg='http://www.w3.org/2000/svg' xmlns='http://www.w3.org/2000/svg' version='1.1' viewBox='0 0 12 9' %3e%3cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' transform='translate(-4.000000, -6.000000)'%3e%3cpolyline stroke='%23fff' points='14.6457919 6.59443244 7.70277058 14.3333333 5 11.3317105'%3e%3c/polyline%3e%3c/g%3e%3c/svg%3e");
+  }
+}
+
+@include respond-to($md-up) {
+}

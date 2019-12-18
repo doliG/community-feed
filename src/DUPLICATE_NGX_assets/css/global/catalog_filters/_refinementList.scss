@@ -1,0 +1,64 @@
+@import 'global/_variables';
+@import 'global/_mixins';
+
+/* MAIN BLOCKS */
+.catalog__columnFilters {
+  .ais-RefinementList-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: none;
+    border-top: 1px solid $grey-light;
+    padding: 30px 20px 20px 20px;
+    font-size: 19px;
+    line-height: 23px;
+    cursor: pointer;
+    text-align: left;
+
+    &::first-letter {
+      text-transform: uppercase;
+    }
+
+    &::after {
+      content: '';
+      position: relative;
+      top: 4px;
+      width: 7px;
+      height: 7px;
+      border-left: solid 1px $black-soft;
+      border-bottom: solid 1px $black-soft;
+      transform-origin: center center;
+      transform: rotate(135deg);
+    }
+
+    &.ais-RefinementList-header--closed {
+      padding-bottom: 30px;
+
+      &::after {
+        transform: rotate(-45deg);
+        top: 0;
+      }
+    }
+  }
+
+  .ais-RefinementList-body {
+    margin-bottom: 24px;
+    padding: 0 20px;
+  }
+}
+
+@include respond-to($md-up) {
+  .catalog__columnFilters {
+    .ais-RefinementList-header {
+      font-size: 22px;
+      line-height: 27px;
+      padding: 24px 0 14px 0;
+    }
+
+    .ais-RefinementList-body {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+}

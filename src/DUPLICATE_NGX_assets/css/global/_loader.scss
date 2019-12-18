@@ -1,0 +1,29 @@
+.hasLoader {
+  position: relative;
+}
+
+.hasLoader::before {
+  display: block;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.5);
+  z-index: 3;
+}
+
+.hasLoader::after {
+  display: block;
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+  background: url('/assets/img/loader/loader.gif') no-repeat top left;
+  background-size: cover;
+  z-index: 4;
+}
