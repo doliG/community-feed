@@ -1,5 +1,16 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Todo
+- [ ] Card (Status card)
+  - [x] Profile
+
+- [ ] Product
+- [ ] Like button
+- [ ] Follow button
+
+- [ ] Recommanded card
+  - [ ] Profile
+
 ## Available Scripts
 
 In the project directory, you can run:

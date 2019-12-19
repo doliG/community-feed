@@ -1,0 +1,59 @@
+// @import '~@vestiaire/design-system/scss/variables.scss';
+@import 'DUPLICATE_NGX_assets/css/global/_variables';
+@import 'DUPLICATE_NGX_assets/css/global/_mixins';
+
+.feedProduct {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin-right: 8px;
+  padding: 16px 8px 32px;
+  background-color: #fff;
+  border-radius: 4px;
+  border: 1px solid $grey-darken;
+
+  &__like {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+  }
+
+  &__img {
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    margin-top: 16px;
+    object-fit: cover;
+  }
+
+  &__infos {
+    margin-top: 8px;
+
+    &__brand {
+      margin-bottom: 4px;
+      color: $black;
+      font-weight: 600;
+    }
+
+    &__supp {
+      margin-bottom: 4px;
+      color: $black;
+    }
+
+    &__price {
+      font-weight: 600;
+      color: $black;
+
+      &--old {
+        font-weight: 500;
+        margin-bottom: 4px;
+        text-decoration: line-through;
+      }
+
+      &--new {
+        color: $colorError;
+      }
+    }
+  }
+}
