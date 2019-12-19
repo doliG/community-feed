@@ -1,5 +1,6 @@
 import React from 'react';
 import Profile from './Profile';
+import { action } from '@storybook/addon-actions';
 
 const profileMock = {
   describes: {
@@ -18,10 +19,16 @@ const profileMock = {
 
 export default {
   component: Profile,
-  title: 'Profile'
+  title: 'Feed/Card/Profile'
 };
 
-export const basic = () => <Profile profile={profileMock} />;
+const actions = {
+  onFollow: action('onFollow'),
+  onSeeProfile: action('onSeeProfile')
+};
+
+export const followed = () =>  <Profile profile={profileMock} {...actions} />;
+export const notFollowed = () =>  <Profile profile={{ ...profileMock, isFollowed: false }} {...actions} />;
 
 // TODO
 // - sans avatar
