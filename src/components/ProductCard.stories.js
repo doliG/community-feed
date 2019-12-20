@@ -28,5 +28,15 @@ const actions = {
   onLike: action('onLike')
 }
 
-export const classic = () => <ProductCard product={productMock} {...actions} />;
-export const withoutDicount = () => <ProductCard product={{...productMock, regularPrice: undefined }} {...actions} />;
+function HOC(props) {
+  return (
+    <div style={{ display: 'flex '}}>
+      <div style={{ flex: "0 0 200px" }}>
+        <ProductCard {...props } />
+      </div>
+    </div>
+  );
+}
+
+export const classic = () => <HOC product={productMock} isLiked={false} likeCount={42} {...actions} />;
+export const withoutDicount = () => <HOC product={{...productMock, regularPrice: undefined }} likeCount={42} {...actions} />;

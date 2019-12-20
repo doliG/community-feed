@@ -1,0 +1,167 @@
+@import 'DUPLICATE_NGX_assets/css/global/_variables';
+@import 'DUPLICATE_NGX_assets/css/global/_mixins';
+
+.likeSnippet {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: $mainColor-light;
+
+  &__icon {
+    width: 17px;
+    height: 15px;
+
+    &__svg {
+      display: block;
+      line-height: 0;
+      height: 100%;
+
+      // sass-lint:disable no-attribute-selectors
+      &[hidden] {
+        // sass-lint:enable no-attribute-selectors
+        display: none;
+      }
+    }
+  }
+
+  &__count {
+    font-size: 11.2px;
+    line-height: 11.2px;
+    margin-top: 3px;
+  }
+
+  /* inline case */
+  &--line {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+  }
+
+
+  /* NEW VERSION DS */
+  &--vertical {
+    color: $black;
+
+    &__icon {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 30px;
+
+      &__svg {
+        display: inline-block;
+        width: 16px;
+        height: 18px;
+
+        // sass-lint:disable no-attribute-selectors
+        &[hidden] {
+          // sass-lint:enable no-attribute-selectors
+          display: none;
+        }
+      }
+    }
+
+    &__count {
+      margin-top: 2px;
+      padding: 2px;
+      border-radius: 7px;
+      background: $grey;
+      color: $black;
+      line-height: 1; // temporary till new fonts
+      text-align: center;
+    }
+  }
+}
+
+/*  display on product page */
+.productPage__like {
+  flex-direction: row;
+  font-size: 16px;
+
+  .likeSnippet {
+    &__icon {
+      width: 21px;
+      height: 19px;
+    }
+
+    &__textCount {
+      display: none;
+    }
+  }
+}
+
+/* display on comments  */
+.comment__like {
+  display: inline;
+
+  &.likeSnippet {
+    color: $grey-dark;
+  }
+
+  .likeSnippet {
+    &__icon {
+      display: inline-block;
+      width: 15px;
+      height: 13px;
+
+      &.liked {
+        color: $mainColor-dark;
+
+        + .likeSnippet__count {
+          color: $mainColor-light;
+        }
+      }
+
+      + .likeSnippet__count {
+        margin-left: 4px;
+      }
+    }
+
+    &__count {
+      display: inline;
+      font-size: 15px;
+      line-height: 20px;
+    }
+
+    &__textCount {
+      display: none;
+    }
+  }
+}
+
+@include respond-to($md-up) {
+  .likeSnippet {
+    &__icon {
+      width: 22.1px;
+      height: 19.5px;
+    }
+
+    &__count {
+      font-size: 14.56px;
+      line-height: 14.56px;
+      margin-top: 4.5px;
+    }
+  }
+
+  .productSnippet__like {
+    flex-direction: row-reverse;
+
+    .likeSnippet {
+      &__count {
+        margin-right: 8px;
+        margin-top: 0;
+      }
+    }
+  }
+
+  .productPage__like {
+    .likeSnippet__textCount {
+      display: block;
+      margin-left: 6px;
+    }
+  }
+}
+
+
+
