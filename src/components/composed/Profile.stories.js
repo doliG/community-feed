@@ -19,7 +19,7 @@ const profileMock = {
 
 export default {
   component: Profile,
-  title: 'Feed/Profile'
+  title: 'Composed/Profile'
 };
 
 const actions = {

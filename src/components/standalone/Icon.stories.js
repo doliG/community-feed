@@ -3,7 +3,7 @@ import Icon from './Icon';
 
 export default {
   component: Icon,
-  title: 'Icon'
+  title: 'Standalone/Icon'
 };
 
 // Please note that icon have a lot of others possibilities, please refer to

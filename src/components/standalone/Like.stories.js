@@ -4,7 +4,7 @@ import { action } from '@storybook/addon-actions';
 
 export default {
   component: Like,
-  title: 'Button/Like'
+  title: 'Standalone/Like'
 }
 
 const actions = {

@@ -1,6 +1,6 @@
 import React from 'react';
 import './Profile.scss';
-import Icon from './Icon';
+import Icon from '../standalone/Icon';
 
 function Profile({ profile, onFollow, onSeeProfile }) {
   const imgixPath = 'https://vestiairecollective-dev.imgix.net'; // Should be somewhere else (like in env in ngx)

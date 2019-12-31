@@ -1,10 +1,10 @@
 import React from 'react';
-import ProductCard from './ProductCard';
+import Product from './Product';
 import { action } from '@storybook/addon-actions';
 
 export default {
-  component: ProductCard,
-  title: 'Product'
+  component: Product,
+  title: 'Composed/cards/Product'
 };
 
 const currencyUnitMock = {
@@ -32,7 +32,7 @@ function HOC(props) {
   return (
     <div style={{ display: 'flex '}}>
       <div style={{ flex: "0 0 200px" }}>
-        <ProductCard {...props } />
+        <Product {...props } />
       </div>
     </div>
   );

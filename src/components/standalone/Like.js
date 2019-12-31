@@ -1,6 +1,6 @@
 import React from 'react';
 import './Like.scss'
-import Icon from '../Icon';
+import Icon from './Icon';
 
 // TODO: Make this component smart (aka do the like req ?)
 function Like({ likeCount, isLiked, onLike }) {

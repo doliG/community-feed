@@ -1,5 +1,5 @@
 import React from 'react';
-import Card from './Card';
+import Activity from './Activity';
 import { action } from '@storybook/addon-actions';
 
 const profileMock = {
@@ -53,8 +53,8 @@ const actions = {
 
 
 export default {
-  component: Card,
-  title: 'Feed/FeedCard'
+  component: Activity,
+  title: 'Composed/cards/Activity'
 };
 
-export const classic = () =>  <Card card={cardMock} {...actions} />;
+export const classic = () =>  <Activity card={cardMock} {...actions} />;

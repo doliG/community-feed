@@ -1,9 +1,9 @@
 import React from 'react';
-import './ProductCard.scss';
+import './Product.scss';
 
-import Like from './buttons/Like';
+import Like from '../../standalone/Like';
 
-function ProductCard({ product, isLiked, likeCount, onLike }) {
+function Product({ product, isLiked, likeCount, onLike }) {
   const imgixPath = 'https://vestiairecollective-dev.imgix.net'; // Should be somewhere else (like in env in ngx)
   const imgSrc = `${imgixPath}/produit/${product.image}`;
 
@@ -24,4 +24,4 @@ function ProductCard({ product, isLiked, likeCount, onLike }) {
     </div>
   );
 }
-export default ProductCard;
+export default Product;
